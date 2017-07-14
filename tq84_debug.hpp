@@ -1,5 +1,6 @@
 #include  <ostream>
 #include <iostream>
+#include  <sstream>
 #include  <fstream>
 
 // #define TQ84_DEBUG_STRINGIFY(x) #x
@@ -10,6 +11,11 @@
 
 #define TQ84_DEBUG_INDENT(TXT) tq84::debug::indent_ tq84_debug_indent_ ## __COUNTER__ = tq84_debug.indent(TXT, TQ84_DEBUG_FUNC_FILE_LINE_ARGS)
 #define TQ84_DEBUG_LOG(TXT) tq84_debug.log(TXT, TQ84_DEBUG_FUNC_FILE_LINE_ARGS)
+#define TQ84_DEBUG_LOG_VAR(VAR) \
+  { std::ostringstream ss; \
+    ss << #VAR << ": " << VAR; \
+    tq84_debug.log(ss.str(), TQ84_DEBUG_FUNC_FILE_LINE_ARGS); \
+  }
 
 namespace tq84 {
 
