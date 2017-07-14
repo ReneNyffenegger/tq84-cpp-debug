@@ -6,13 +6,13 @@
 #include "tq84_debug.hpp"
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 
 namespace tq84 {
 
 debug::debug(const std::string& filename) {
 
     if (filename == "cout") {
-
       stream_out = &std::cout;
     }
     else {
@@ -26,12 +26,34 @@ debug::~debug() {
   delete stream_out;
 }
 
-void debug::print_line(const std::string& text) {
-  for (int i=0; i<indent_level; i++) {
-    *stream_out << "  ";
-  }
-  *stream_out << text << std::endl;
+void debug::start_line(const std::string& text) {
+
+  std::string spaces(indent_level*2, ' ');
+
+  std::ostringstream oss;
+  oss << spaces << text;
+
+  *stream_out << std::left << std::setw(70) << oss.str();
 }
+
+void debug::end_line() {
+  *stream_out << std::endl;
+}
+
+void debug::print_indent(const std::string& text, TQ84_DEBUG_FUNC_FILE_LINE_PARAMS) {
+  start_line(text);
+
+  *stream_out << std::left << std::setw(30) << file <<  std::setw(30) << func << std::setw(4) << line << std::endl;
+//for (int i=0; i<indent_level; i++) {
+//  *stream_out << "  ";
+//}
+}
+
+void debug::print_line(const std::string& text, TQ84_DEBUG_FUNC_FILE_LINE_PARAMS) {
+  print_indent(text, file, func, line);
+//*stream_out << text << std::endl;
+}
+
 
 debug::indent_::indent_(debug& dbg) : debug_(dbg) {
   ++debug_.indent_level;
@@ -39,19 +61,20 @@ debug::indent_::indent_(debug& dbg) : debug_(dbg) {
 
 debug::indent_::~indent_() {
   --debug_.indent_level;
-  debug_.print_line("}");
+  debug_.start_line("}");
+  debug_.end_line();
 }
 
-debug::indent_ debug::indent(const std::string& text) {
+debug::indent_ debug::indent(const std::string& text, TQ84_DEBUG_FUNC_FILE_LINE_PARAMS) {
   std::ostringstream s;
   s << text;
   s << " {";
-  print_line(s.str());
+  print_line(s.str(), file, func, line);
   return indent_(*this);
 }
 
-void debug::log(const std::string& text) {
-  print_line(text);
+void debug::log(const std::string& text, TQ84_DEBUG_FUNC_FILE_LINE_PARAMS) {
+  print_line(text, file, func, line);
 }
 
 }
