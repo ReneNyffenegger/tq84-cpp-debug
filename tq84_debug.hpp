@@ -49,4 +49,6 @@ class debug {
 
 }
 
+extern tq84::debug tq84_debug;
+
 #define INDENT

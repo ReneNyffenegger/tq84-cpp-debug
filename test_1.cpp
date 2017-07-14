@@ -1,6 +1,7 @@
 #include "tq84_debug.hpp"
 
-tq84::debug tq84_debug("/tmp/tq84-debug-test.txt");
+// Global var is in tq84_debug.cpp
+// tq84::debug tq84_debug("/tmp/tq84-debug-test.txt");
 
 void f() {
 
