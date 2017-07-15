@@ -43,7 +43,7 @@ void debug::end_line() {
 void debug::print_indent(const std::string& text, TQ84_DEBUG_FUNC_FILE_LINE_PARAMS) {
   start_line(text);
 
-  *stream_out << std::left << std::setw(30) << file <<  std::setw(30) << func << std::setw(4) << line << std::endl;
+  *stream_out << std::left << std::setw(30) << file <<  std::setw(30) << func << std::setw(4) << std::right << line << std::endl;
 //for (int i=0; i<indent_level; i++) {
 //  *stream_out << "  ";
 //}
