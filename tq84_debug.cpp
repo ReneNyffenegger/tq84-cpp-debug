@@ -79,4 +79,4 @@ void debug::log(const std::string& text, TQ84_DEBUG_FUNC_FILE_LINE_PARAMS) {
 
 }
 
-tq84::debug tq84_debug("/tmp/tq84_debug.txt");
+tq84::debug tq84_debug("tq84_debug.txt");
