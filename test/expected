@@ -1,0 +1,19 @@
+Entered main {                                                                                                          main.cpp                      main                            42
+  going to call f                                                                                                       main.cpp                      main                            43
+  Entered f {                                                                                                           main.cpp                      f                               25
+    f                                                                                                                   main.cpp                      f                               27
+    indeed 42==42 {                                                                                                     main.cpp                      f                               30
+      going to call g()                                                                                                 main.cpp                      f                               32
+      Entered func_with_param {                                                                                         main.cpp                      func_with_param                 14
+        param_i: 42                                                                                                     main.cpp                      func_with_param                 15
+        param_s: Hello, world                                                                                           main.cpp                      func_with_param                 16
+        Going to call another_func_with_param                                                                           main.cpp                      func_with_param                 18
+        Entered another_func_with_param {                                                                               main.cpp                      another_func_with_param          8
+          i1: -9, s2: minus nine, f3: 3.141                                                                             main.cpp                      another_func_with_param          9
+        }                                                                                                               
+      }                                                                                                                 
+    }                                                                                                                   
+    going to leave f                                                                                                    main.cpp                      f                               36
+  }                                                                                                                     
+  returned from f                                                                                                       main.cpp                      main                            45
+}                                                                                                                       

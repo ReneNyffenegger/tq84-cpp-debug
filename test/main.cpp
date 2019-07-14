@@ -1,4 +1,4 @@
-#include "tq84_debug.hpp"
+#include "../tq84_debug.hpp"
 
 // Global var is in tq84_debug.cpp
 // tq84::debug tq84_debug("/tmp/tq84-debug-test.txt");
