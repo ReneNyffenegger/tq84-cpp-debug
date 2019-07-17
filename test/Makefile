@@ -1,8 +1,16 @@
 .PHONY: diff
 
+$(info  OS = $(OS))
+
+ifeq ($(OS),Windows_NT)
+  DIFF:=fc
+else
+  DIFF:=diff
+endif
+
 diff: test-prog
 	@./test-prog
-	@diff /tmp/tq84_debug.txt expected
+	@$(DIFF) tq84_debug.txt expected
 
 test-prog: tq84_debug.o main.o
 	$(CXX) tq84_debug.o main.o -o test-prog

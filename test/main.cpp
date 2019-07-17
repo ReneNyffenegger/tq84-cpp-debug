@@ -44,4 +44,8 @@ int main() {
   f();
   TQ84_DEBUG_LOG("returned from f");
 
+//TQ84_DEBUG_LOG(TQ84_COUNT_ARGUMENTS(foo));
+//TQ84_DEBUG_LOG(TQ84_COUNT_ARGUMENTS(bar,baz))
+//TQ84_DEBUG_LOG(TQ84_COUNT_ARGUMENTS(one, two, three))
+
 }
