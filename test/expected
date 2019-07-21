@@ -10,6 +10,7 @@ Entered main {                                                                  
         Going to call another_func_with_param                                                                           main.cpp                      func_with_param                 18
         Entered another_func_with_param {                                                                               main.cpp                      another_func_with_param          8
           i1: -9, s2: minus nine, f3: 3.141                                                                             main.cpp                      another_func_with_param          9
+          i1: -9, s2: minus nine                                                                                        main.cpp                      another_func_with_param         10
         }                                                                                                               
       }                                                                                                                 
     }                                                                                                                   

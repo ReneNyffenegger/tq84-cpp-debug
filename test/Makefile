@@ -15,13 +15,13 @@ diff: test-prog
 test-prog: tq84_debug.o main.o
 	$(CXX) tq84_debug.o main.o -o test-prog
 
-tq84_debug.o: ../tq84_debug.cpp ../tq84_debug.hpp
+tq84_debug.o: ../tq84_debug.cpp ../tq84_debug.hpp ../tq84_debug_macros.hpp ../tq84_count_arguments.hpp ../tq84_stringstream_expr.hpp
 	$(CXX) -c ../tq84_debug.cpp -o tq84_debug.o
 
 main.o: main.ii
 	$(CXX) -c main.ii -o main.o
 
-main.ii: main.cpp ../tq84_debug.hpp
+main.ii: main.cpp ../tq84_debug.hpp ../tq84_debug_macros.hpp ../tq84_count_arguments.hpp ../tq84_stringstream_expr.hpp
 	$(CXX) -E main.cpp -o main.ii
 #
 # main.o: main.cpp ../tq84_debug.hpp

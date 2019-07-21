@@ -1,7 +1,7 @@
-// #define TQ84_PASS_ON(...) __VA_ARGS__
+#define TQ84_PASS_ON(...) __VA_ARGS__
 #define TQ84_ELEVENTH_ARGUMENT(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, ...) a11
-// #define TQ84_COUNT_ARGUMENTS(...) TQ84_PASS_ON(TQ84_PASS_ON(TQ84_ELEVENTH_ARGUMENT)(dummy, ##__VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0))
-#define TQ84_COUNT_ARGUMENTS(...) TQ84_ELEVENTH_ARGUMENT(dummy, ##__VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
+#define TQ84_COUNT_ARGUMENTS(...) TQ84_PASS_ON(TQ84_PASS_ON(TQ84_ELEVENTH_ARGUMENT)(dummy, ##__VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0))
+// #define TQ84_COUNT_ARGUMENTS(...) TQ84_ELEVENTH_ARGUMENT(dummy, ##__VA_ARGS__, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
 
 // // q //
 // // q // #define P(i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14) I1: i1, I2: i2, I3: i3, I4: i4, I5: i5, I6: i6, I7: i7, i8, i9, i10, i11, i12, i13, i14

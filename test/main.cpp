@@ -7,7 +7,7 @@ void another_func_with_param(int i1, const std::string& s2, float f3) {
 
   TQ84_DEBUG_INDENT("Entered another_func_with_param");
   TQ84_DEBUG_LOG_VAR(i1, s2, f3);
-
+  TQ84_DEBUG_LOG_VAR(i1, s2);
 }
 
 void func_with_param(int param_i, const std::string& param_s) {
