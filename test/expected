@@ -16,4 +16,7 @@ Entered main {                                                                  
     going to leave f                                                                                                    main.cpp                      f                               36
   }                                                                                                                     
   returned from f                                                                                                       main.cpp                      main                            45
+  Count of arguments in (foo): 1                                                                                        main.cpp                      main                            47
+  Count of arguments in (bar,baz): 2                                                                                    main.cpp                      main                            48
+  Count of arguments in (one, two, three): 3                                                                            main.cpp                      main                            49
 }                                                                                                                       

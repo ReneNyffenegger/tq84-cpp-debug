@@ -1,0 +1,12 @@
+#define TQ84_CONCAT(a, b) a ## b
+//
+//      https://stackoverflow.com/q/1597007/180275
+//
+#define TQ84_CONCAT_INDIRECT(a, b) TQ84_CONCAT(a, b)
+
+#define TQ84_UNIQUE_IDENT_LINE TQ84_CONCAT_INDIRECT(tq84_ident, __LINE__)
+
+#define TQ84_STRINGSTREAM_EXPR(expr) std::stringstream TQ84_UNIQUE_IDENT_LINE; TQ84_UNIQUE_IDENT_LINE << expr
+#define TQ84_STRINGSTREAM_STR        TQ84_UNIQUE_IDENT_LINE.str()
+// #define TQ84_STRINGSTREAM_EXPR_STRING(expr) TQ84_STRINGSTREAM_EXPR(expr); TQ84_UNIQUE_IDENT_LINE.c_str()
+// TQ84_STRINGSTREAM_EXPR_STRING("foo " << 42);

@@ -18,5 +18,11 @@ test-prog: tq84_debug.o main.o
 tq84_debug.o: ../tq84_debug.cpp ../tq84_debug.hpp
 	$(CXX) -c ../tq84_debug.cpp -o tq84_debug.o
 
-main.o: main.cpp ../tq84_debug.hpp
-	$(CXX) -c main.cpp -o main.o
+main.o: main.ii
+	$(CXX) -c main.ii -o main.o
+
+main.ii: main.cpp ../tq84_debug.hpp
+	$(CXX) -E main.cpp -o main.ii
+#
+# main.o: main.cpp ../tq84_debug.hpp
+# 	$(CXX) -c main.cpp -o main.o

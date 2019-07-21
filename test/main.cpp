@@ -44,8 +44,8 @@ int main() {
   f();
   TQ84_DEBUG_LOG("returned from f");
 
-//TQ84_DEBUG_LOG(TQ84_COUNT_ARGUMENTS(foo));
-//TQ84_DEBUG_LOG(TQ84_COUNT_ARGUMENTS(bar,baz))
-//TQ84_DEBUG_LOG(TQ84_COUNT_ARGUMENTS(one, two, three))
+  TQ84_DEBUG_LOG("Count of arguments in (foo): "             << TQ84_COUNT_ARGUMENTS(foo));
+  TQ84_DEBUG_LOG("Count of arguments in (bar,baz): "         << TQ84_COUNT_ARGUMENTS(bar,baz))
+  TQ84_DEBUG_LOG("Count of arguments in (one, two, three): " << TQ84_COUNT_ARGUMENTS(one, two, three))
 
 }

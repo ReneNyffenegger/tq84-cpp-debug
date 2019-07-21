@@ -1,18 +1,18 @@
 all: diff
 
-.PHONY: diff
+# .PHONY: diff
 
 COPTS=/nologo
 
-diff: test-prog.exe
-	@.\test-prog.exe
+diff: test-prog-nmake.exe
+	@.\test-prog-nmake.exe
 	@fc tq84_debug.txt expected
 
-test-prog.exe: tq84_debug.obj main.obj
-	@$(CXX) $(COPTS) tq84_debug.obj main.obj /Fotest-prog.exe
+test-prog-nmake.exe: tq84_debug.obj main.obj
+	$(CXX) $(COPTS) tq84_debug.obj main.obj    /Fetest-prog-nmake.exe
 
 tq84_debug.obj: ../tq84_debug.cpp ../tq84_debug.hpp
 	@$(CXX) $(COPTS) -EHsc -c ../tq84_debug.cpp /Fotq84_debug.obj
 
 main.obj: main.cpp ../tq84_debug.hpp
-	@$(CXX) $(COPTS) -EHsc -c main.cpp /Fomain.obj
+	@$(CXX) $(COPTS) -EHsc -c main.cpp          /Fomain.obj
